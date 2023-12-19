@@ -20,16 +20,16 @@
   transform: scale(1.04);
 }
 
-.gallery-container {
+.simple-lightbox {
   background: rgba(46, 47, 66, 0.8);
 }
 
-.gallery-container button.sl-close,
-.gallery-container .sl-navigation button.sl-prev,
-.gallery-container .sl-navigation button.sl-next {
+.simple-lightbox button.sl-close,
+.simple-lightbox .sl-navigation button.sl-prev,
+.simple-lightbox .sl-navigation button.sl-next {
   color: #fff;
 }
 
-div.gallery-container div.sl-counter {
+div.simple-lightbox div.sl-counter {
   color: #fff;
 }

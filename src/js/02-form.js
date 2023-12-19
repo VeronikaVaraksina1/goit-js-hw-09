@@ -8,11 +8,20 @@ const input = feedbackForm.elements.email;
 const textarea = feedbackForm.elements.message;
 
 const savedState = localStorage.getItem(localStorageKey);
+console.log(savedState);
 
-if (savedState ?? '') {
-  const parsedState = JSON.parse(savedState);
-  input.value = parsedState.email;
-  textarea.value = parsedState.message;
+if (savedState ?? false) {
+  try {
+    const parsedState = JSON.parse(savedState);
+
+    if (parsedState.email !== undefined && parsedState.message !== undefined) {
+      input.value = parsedState.email;
+      textarea.value = parsedState.message;
+    }
+  } catch (error) {
+    console.log(error.name);
+    console.log(error.message);
+  }
 }
 
 feedbackForm.addEventListener('input', () => {
@@ -27,11 +36,15 @@ feedbackForm.addEventListener('input', () => {
 feedbackForm.addEventListener('submit', e => {
   e.preventDefault();
 
-  if (input.value === '' || textarea.value === '') {
+  if (input.value.trim() === '' || textarea.value.trim() === '') {
     alert('You need to write a message!');
     return;
   }
 
   localStorage.removeItem(localStorageKey);
+  console.log({
+    email: feedbackForm.elements.email.value.trim(),
+    message: feedbackForm.elements.message.value.trim(),
+  });
   feedbackForm.reset();
 });
