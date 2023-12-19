@@ -6,6 +6,7 @@
 */
 @import url('./reset.css');
 @import url('./01-gallery.css');
+@import url('./02-form.css');
 
 :root {
   font-family: 'Montserrat', Inter, Avenir, Helvetica, Arial, sans-serif;
