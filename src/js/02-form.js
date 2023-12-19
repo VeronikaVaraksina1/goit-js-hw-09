@@ -8,7 +8,6 @@ const input = feedbackForm.elements.email;
 const textarea = feedbackForm.elements.message;
 
 const savedState = localStorage.getItem(localStorageKey);
-console.log(savedState);
 
 if (savedState ?? false) {
   try {
@@ -43,8 +42,8 @@ feedbackForm.addEventListener('submit', e => {
 
   localStorage.removeItem(localStorageKey);
   console.log({
-    email: feedbackForm.elements.email.value.trim(),
-    message: feedbackForm.elements.message.value.trim(),
+    email: input.value.trim(),
+    message: textarea.value.trim(),
   });
   feedbackForm.reset();
 });
