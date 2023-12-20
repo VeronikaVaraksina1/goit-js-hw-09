@@ -75,7 +75,7 @@ gallery.innerHTML = images.reduce(
   (acc, { preview, original, description }) =>
     acc +
     `<li class="gallery-item">
-    <a class="gallery-link" href="${original}">
+      <a class="gallery-link" href="${original}">
         <img
             class="gallery-image"
             src="${preview}"
@@ -83,8 +83,8 @@ gallery.innerHTML = images.reduce(
             width="360"
             height="200"
             />
-    </a>
-</li>`,
+      </a>
+    </li>`,
   ''
 );
 
